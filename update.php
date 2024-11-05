@@ -12,15 +12,16 @@ if (isset($_GET['id'])) { // Verifica se o ID foi passado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome']; // Recebe o novo nome
     $endereço = $_POST['endereço']; // Recebe o endereço
-    $data_nascimento = $_POST['data_nascimento']; // Recebe a data de nascimento
+    $data_nascimento = $_POST['nascimento']; // Recebe a data de nascimento
     $telefone = $_POST['telefone']; // Recebe o telefone
-    $sql = "UPDATE informações.infromações SET nome='$nome', endereço='$endereço', data_nascimento='$data_nascimento' telefone='$telefone' WHERE id=$id"; // Prepara a atualização
+    $sql = "UPDATE informações.infromações SET nome='$nome', endereço='$endereço', nascimento='$data_nascimento' telefone='$telefone' WHERE id= '$id'" ;  // Prepara a atualização
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn-->query($sql)===TRUE) {
         header("Location: index.php"); // Redireciona se a atualização for bem-sucedida
     } else {
         echo "Erro: " . $conn->error; // Mostra erro, se houver
     }
+
 }
 
 ?>
@@ -35,9 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Atualizar Usuário</h1>
     <form action="" method="POST">
         <label>Nome:</label>
-        <input type="text" name="nome" value="<?php echo $usuario['nome']; ?>" required>
-        <label>Email:</label>
-        <input type="email" name="email" value="<?php echo $usuario['email']; ?>" required>
+        <input type="text" name="nome" value="<?php echo $usu['nome']; ?>" required>
+        <label>Endereço:</label>
+        <input type="text" name="endereço" value="<?php echo $usuario['endereço']; ?>" required>
+        <label>Data de nascimento:</label>
+        <input type="date" name="nascimento" value="<?php echo $usuario['nascimento']; ?>" required>
+        <label>Telefone:</label>
+        <input type="tel" name="telefone" value="<?php echo $usuario['telefone']; ?>" required>
         <input type="submit" value="Atualizar">
     </form>
     <a href="index.php">Cancelar</a> <!-- Link para voltar -->
