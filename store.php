@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Verifica se o formulário foi env
     $endereco = $_POST['endereço']; // Recebe o endereço
     $data_nascimento = $_POST['nascimento']; // Recebe a data de nascimento
     $telefone = $_POST['telefone']; // Recebe o telefone
-    $sql = "INSERT INTO informações.infromações; (nome, endereço,data_nascimento, telefone) VALUES ('$nome', '$endereco', '$data_nascimento', '$telefone')"; // Prepara a consulta
+    $sql = "INSERT INTO infromações (nome, endereço, data_nascimento, telefone) VALUES ('$nome', '$endereco', '$data_nascimento', '$telefone')";
 
     // Executa a consulta e verifica se foi bem-sucedida
     if ($conn->query($sql) === TRUE) {
