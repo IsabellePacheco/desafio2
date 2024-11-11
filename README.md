@@ -1,6 +1,6 @@
 # DESAFIO 2- Atividade CRUD simples 
 
-## Página de cadastro com a ajuda de banco de dados 
+## Atividade de programação com PHP e com Banco de Dados.
 
 
 ####  Informações sobre o usuário
