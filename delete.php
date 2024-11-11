@@ -1,4 +1,6 @@
 <?php
+
+
 include 'conexao.php'; // Inclui o arquivo de conexão
 
 if (isset($_GET['id'])) { // Verifica se o ID foi passado
